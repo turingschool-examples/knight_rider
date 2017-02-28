@@ -1,5 +1,5 @@
 class Character
-	attr_reader :name
+	attr_reader :name, :actor, :description, :birth_year, :salary, :headshot_url
 	def initialize(name, actor, description, birth_year, salary, headshot_url)
 		@name = name
 		@actor = actor
