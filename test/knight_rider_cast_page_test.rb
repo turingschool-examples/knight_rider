@@ -28,7 +28,7 @@ class TestKnightRiderCastPage < Minitest::Test
   end
 
   def test_that_it_has_erb_result
-    assert_equal ERB, krcp.make_page
+    assert_equal String, krcp.make_page.class
   end
 
   def test_that_new_file_is_created_and_written
