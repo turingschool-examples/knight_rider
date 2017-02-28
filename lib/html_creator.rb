@@ -22,15 +22,11 @@ class HTML
 																										 "<ul>Description: #{char.description}</ul>",
 																										 "<ul>Age:         #{char.age}</ul>",
 																										 "<ul>Headshot:    #{char.headshot_url}</ul>",
-																										 "\n"].join("\n")
+																										 ""].join("\n")
 										}
 		end
 	end
-
-	def characters_remove_hash_array
-		char_once.join("\n")
-	end
-
+	
 	def zipped
 		value, key = [], []
 		char_once.map do |ugh| 
