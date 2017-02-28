@@ -21,12 +21,12 @@ class HTML
 																										 "<ul>Actor:       #{char.actor}</ul>",
 																										 "<ul>Description: #{char.description}</ul>",
 																										 "<ul>Age:         #{char.age}</ul>",
-																										 "<ul>Headshot:    #{char.headshot_url}</ul>",
+																										 "<ul>Headshot:    <a href = #{char.headshot_url}>#{char.name} Headshot</a></ul>",
 																										 ""].join("\n")
 										}
 		end
 	end
-	
+
 	def zipped
 		value, key = [], []
 		char_once.map do |ugh| 
