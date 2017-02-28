@@ -1,5 +1,4 @@
-require 'minitest'
-require 'minitest/autorun'
+require './test/test_helper'
 require './lib/character'
 
 

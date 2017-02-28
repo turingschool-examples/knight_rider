@@ -10,4 +10,9 @@ class KnightRider
   end
 
 
+  def total_payroll
+    binding.pry
+  end
+
+
 end
