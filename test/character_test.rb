@@ -1,61 +1,64 @@
 gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/knight_rider'
 require './lib/character'
 
-class KnightRiderTest < Minitest::Test
+class CharacterTest < Minitest::Test
 
   def test_it_exists
     kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
 
-    assert_instance_of KnightRider, knight_rider
     assert_instance_of Character, kitt
     assert_instance_of Character, michael_knight
   end
 
-  def test_knight_rider_has_characters
+  def test_character_has_a_name
     kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
 
-    assert_equal [kitt, michael_knight], knight_rider.characters
+    assert_equal "KITT", kitt.name
+    assert_equal "Michael Knight", michael_knight.name
   end
 
-  def test_knight_rider_has_a_creator
+  def test_character_has_an_actor
     kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
 
-    assert_equal "Glen Larson", knight_rider.creator
+    assert_equal "William Daniels", kitt.actor
+    assert_equal "David Hasselhoff", michael_knight.actor
   end
 
-  def test_knight_rider_has_a_network
+  def test_character_has_a_description
     kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
 
-    assert_equal "NBC", knight_rider.network
+    assert_equal "Pontiac Trans-Am", kitt.description
+    assert_equal "A special type of hero", michael_knight.description
   end
 
-  def test_knight_rider_total_payroll
+  def test_character_has_a_birth_year
     kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-    devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
-    knight_rider = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
 
-    assert_equal 1001000000, knight_rider.total_payroll
+    assert_equal 1982, kitt.birth_year
+    assert_equal 1952, michael_knight.birth_year
   end
 
-  def test_highest_grossing_actor
+  def test_character_has_a_salary
     kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-    devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
-    knight_rider = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
 
-    assert michael_knight, knight_rider.highest_grossing_actor
+    assert_equal "0.00", kitt.salary
+    assert_equal "1,000,000,000.00", michael_knight.salary
+  end
+
+  def test_character_has_a_headshot_url
+    kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
+    michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
+
+    assert_equal "https://goo.gl/lSFYQo", kitt.headshot_url
+    assert_equal "https://goo.gl/Qk0pwL", michael_knight.headshot_url
   end
 
 end
