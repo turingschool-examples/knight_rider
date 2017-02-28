@@ -7,8 +7,14 @@ class Character
     @actor = actor_name
     @description = description
     @birth_year = birth_year
-    @salary = salary.to_i
+    @salary = parse_salary(salary_string)
     @headshot_url = headshot_url
+  end
+
+  def parse_salary(salary)
+    salary = salary.to_s
+    salary.gsub!(/[^\d^\.]/, '')
+    salary.to_i
   end
 
 
