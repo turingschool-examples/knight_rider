@@ -17,14 +17,12 @@ class KnightRiderTest < Minitest::Test
   end
 
   def test_they_exist
-    skip
     assert_instance_of Character, @kitt
     assert_instance_of Character, @michael_knight
     assert_instance_of KnightRider, @knight_rider
   end
 
   def test_it_returns_characters
-    skip
     assert_instance_of Array, @knight_rider.characters
     assert_equal 2, @knight_rider.characters.count
     assert_instance_of Character, @knight_rider.characters.first
@@ -33,12 +31,10 @@ class KnightRiderTest < Minitest::Test
   end
 
   def test_it_returns_creator
-    skip
     assert_equal "Glen Larson", @knight_rider.creator
   end
 
   def test_it_returns_network
-    skip
     assert_equal "NBC", @knight_rider.network
   end
 
