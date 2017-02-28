@@ -8,6 +8,4 @@ class Character
 		@salary = salary
 		@headshot_url = headshot_url
 	end
-
-
 end
