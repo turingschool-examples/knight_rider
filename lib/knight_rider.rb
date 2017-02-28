@@ -17,9 +17,45 @@ class KnightRider
     characters.map { |character| convert_salary(character) }.reduce(:+)
   end
 
-  def highest_grossing_actor
-    # characters.each { |character| ch}
+  def hashing_the_hoff
+    @hash_elhoff = {} #there's gotta be bonus points for this!!!!
+    @characters.each { |character| @hash_elhoff[character] = convert_salary(character) }
   end
 
+  def highest_grossing_actor
+    hashing_the_hoff
+    @hash_elhoff.max_by { |k,v| v }[0]
+  end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
