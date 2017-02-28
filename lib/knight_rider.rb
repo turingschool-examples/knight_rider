@@ -20,11 +20,5 @@ class KnightRider
 	def payroll
 
 	end
-		# c.salary.split(',').join.to_i
-		# c_two = c.salary.split.map do |num|
-		# 	num.to_i
-		# end
-		# c_two, reduce(:+)
-	# end
 
 end
