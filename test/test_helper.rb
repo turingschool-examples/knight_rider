@@ -1,0 +1,6 @@
+require 'minitest/autorun'
+require 'minitest/pride'
+require 'pry-state'
+require './lib/knight_rider'
+require './lib/character'
+require './lib/html'
