@@ -49,7 +49,7 @@ class HtmlTest < Minitest::Spec
     end
 
     it "should make a page header" do
-      html
+      html.must_include('<header>Knight Rider Cast</header>')
     end
   end
 
