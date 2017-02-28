@@ -27,8 +27,13 @@ class KnightRiderTest < Minitest::Test
   end
 
   def test_total_payroll
-    skip
     assert_equal 1001000000, @knight_rider.total_payroll
+  end
+
+  def test_highest_grossing_actor
+    assert_equal "Michael Knight", @knight_rider.highest_grossing_actor.name
+    assert_equal 1000000000.00, @knight_rider.highest_grossing_actor.salary
+    assert_instance_of Character, @knight_rider.highest_grossing_actor
   end
 
 

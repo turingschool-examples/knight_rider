@@ -11,8 +11,11 @@ class KnightRider
 
 
   def total_payroll
-    # binding.pry
+    characters.inject(0) {|sum, char| sum + char.salary}
   end
 
+  def highest_grossing_actor
+    characters.max_by(&:salary)
+  end
 
 end
