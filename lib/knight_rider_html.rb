@@ -10,8 +10,8 @@ class KnightRiderHtml
     @knight_rider = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
   end
 
-  def write_html
-    file = File.new("./data/html_output.html", "w")
+  def write_html(path)
+    file = File.new(path, "w")
     file.puts "<body>"
     print_cast(file)
     file.puts "</body>"
@@ -26,7 +26,7 @@ class KnightRiderHtml
       file.puts "<h3>Actor: #{char.actor}</h3>"
       file.puts "<h3>Description: #{char.description}</h3>"
       file.puts "<h3>Age: #{2017 - char.birth_year}</h3>"
-      file.puts "<img src= #{char.headshot_url}</img>"
+      file.puts "<img height= '250' src= #{char.headshot_url}> </img>"
     end
   end
 
@@ -34,6 +34,7 @@ class KnightRiderHtml
 end
 
 writer = KnightRiderHtml.new
+writer.write_html("./data/html_output.html")
 binding.pry
 
 ""
