@@ -3,6 +3,7 @@ require'minitest/pride'
 require'./lib/html_creator'
 require'./lib/knight_rider'
 require'./lib/character'
+require'pry'
 
 class HTMLTest < Minitest::Test
 		attr_reader :kitt, :michael_knight, :knight_rider, :devon_miles, :knight_rider_v2, :html
@@ -21,7 +22,16 @@ class HTMLTest < Minitest::Test
 		assert_equal knight_rider_v2, html.movie
 	end
 
-	def test_can_write_to_file
+	def test_makes_character_attributes_a_hash
+		assert_equal Array, html.characters_attributes.class
+	end
+
+	def test_can_remove_outside_array
+		skip
+		assert_equal ({"## Character_1"=>"KITTWilliam Daniels\nPontiac Trans-Am\n35\nhttps://goo.gl/lSFYQo"}), html.characters_remove_hash_array[0..87]
+	end
+
+	def test_write
 		html.write
 	end
 end
