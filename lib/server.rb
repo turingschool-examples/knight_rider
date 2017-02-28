@@ -3,16 +3,12 @@ require 'uri'
 require './lib/knight_rider'
 
 class Server
+
+  attr_accessor :close_for_test
   attr_reader :port,
               :request_lines,
-              :verb,
-              :user_path,
-              :client,
-              :response,
-              :paths,
-              :protocol,
-              :host,
-              :accept
+              :header,
+              :output
 
   def initialize(port)
     @port = port
@@ -22,9 +18,7 @@ class Server
   def run_server
     Socket.tcp_server_loop(port) do |client, _|
       read_request(client)
-      sort_request
       make_header
-      parse_path(client)
       define_response
       make_output
       output_to_client(client)
@@ -32,11 +26,6 @@ class Server
       break if close_for_test == true
     end
   end
-
-  # def accept_connection(server = tcp_server)
-  #   @client = server.accept
-  #   puts 'client connected'
-  # end
 
   def read_request(server = client)
     @request_lines = []
@@ -46,19 +35,30 @@ class Server
     puts request_lines.inspect
   end
 
-  def sort_request(request = request_lines)
-    @verb = request[0].split(' ')[0]
-    @user_path = requested_file(request)
-    @protocol = request[0].split(' ')[2]
-    @host = request[1].split(' ')[1].split(':')[0]
-    @accept = request.find {|string| string.include? "Accept:"}.split(': ')[1]
-  end
-
-  def requested_file(lines = request_lines)
-    request_uri = lines[0].split(' ')[1]
-    URI.unescape(URI(request_uri).path)
+  def make_header
+    @header = ["http/1.1 200 ok",
+               "server: ruby",
+               "content-type: text/html; charset=iso-8859-1"]
+    header.join("\r\n")
   end
 end
 
-ser = Server.new(9291)
-ser.run_server
+def define_response
+    @response = 'hi'
+  end
+
+  def make_output
+    @output = "<html><head></head><body><pre>#{@response}</pre></body></html>"
+  end
+
+  def output_to_client(client)
+    client.puts header
+    client.puts output
+  end
+
+  def close_client(client)
+    client.close
+  end
+
+# ser = Server.new(9291)
+# ser.run_server
