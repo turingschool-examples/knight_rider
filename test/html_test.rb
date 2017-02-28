@@ -55,9 +55,14 @@ class HtmlTest < Minitest::Spec
 
     it "should list characters from the show" do
       html.must_include("KITT")
+      html.must_include("William Daniels")
+      html.must_include("Pontiac")
+      html.must_include("1982")
+      html.must_include("salary: 0")
     end
 
     it "should show a picture for the headshot url" do
+      html.must_include("<img src")
     end
   end
 
