@@ -2,9 +2,17 @@
   <body>
     <h1>Knight Rider Cast</h1>
     <ul>
+      <% show.characters.each do |character| %>
       <li>
-        <%= knight_rider.characters>
+        name: <%= character.name %>
+        actor:
+        description:
+        birth_year:
+        salary:
+        headshot:
       </li>
+      <%= character %>
+      <% end %>
     </ul>
   </body>
 </html>
