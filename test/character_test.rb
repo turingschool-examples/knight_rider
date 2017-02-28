@@ -13,5 +13,14 @@ class CharacterTest < Minitest::Test
     assert_instance_of Character, @kitt
   end
 
+  def test_character_attributes
+    assert_equal "KITT", @kitt.name
+    assert_equal "William Daniels", @kitt.actor
+    assert_equal "Pontiac Trans-Am", @kitt.description
+    assert_equal 1982, @kitt.birth_year
+    assert_equal 0, @kitt.salary
+    assert_equal "https://goo.gl/lSFYQo", @kitt.headshot_url
+  end
+
 
 end
