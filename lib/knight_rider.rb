@@ -1,4 +1,5 @@
 require './lib/character'
+require 'erb'
 
 class KnightRider
 
@@ -20,5 +21,14 @@ class KnightRider
     characters.max_by(&:salary)
   end
 
-  
+  def make_html_page
+    erb_page = ERB.new File.read "knight_rider.erb"
+    html_page = erb_page.result(binding)
+
+    filename = "knight_rider.html"
+    File.open(filename,'w') do |file|
+      file.puts html_page
+    end
+  end
+
 end

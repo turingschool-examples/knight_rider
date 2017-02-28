@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Knight Rider Cast</title>
+</head>
+<body>
+  <table>
+  <tr><th>Name</th><th>Actor</th><th>Description</th><th>Birth Year</th><th>Headshot</th></tr>
+    <% characters.each do |character| %>
+      <tr>
+        <td><%= "#{character.name}" %></td>
+        <td><%= "#{character.actor}" %></td>
+        <td><%= "#{character.description}" %></td>
+        <td><%= "#{character.birth_year}" %></td>
+        <td><%= "#{character.headshot_url}" %></td>
+      </tr>
+    <% end %>
+  </table>
+</body>
+</html>

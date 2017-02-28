@@ -37,4 +37,10 @@ class KnightRiderTest < Minitest::Test
     assert_equal "Michael Knight", knight_rider.highest_grossing_actor.name
   end
 
+  def test_make_html_page
+    knight_rider = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
+    
+    knight_rider.make_html_page
+  end
+
 end
