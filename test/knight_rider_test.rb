@@ -17,5 +17,14 @@ class KnightRiderTest < Minitest::Spec
     it "should be a KnightRider" do
       knight_rider.must_be_instance_of(KnightRider)
     end
+
+    it "should know its own information" do
+      knight_rider.characters.count.must_equal(2)
+      knight_rider.characters.sample.must_be_instance_of(Character)
+
+      knight_rider.creator.must_equal("Glen Larson")
+      knight_rider.network.must_equal("NBC")
+    end
+
   end
 end
