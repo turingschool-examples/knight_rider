@@ -23,8 +23,7 @@ class HtmlTest < Minitest::Spec
 
     it "should know how to make an html file" do
       html.print_to_file('knight_rider')
-      File.exist?('./output/knight_rider.html').must_be(:true)
-
+      assert File.exist?('./output/knight_rider.html')
     end
   end
 
