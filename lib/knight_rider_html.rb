@@ -12,8 +12,9 @@ class KnightRiderHtml
 
   def write_html
     file = File.new("./data/html_output.html", "w")
-
+    file.puts "<body>"
     print_cast(file)
+    file.puts "</body>"
     file.close
 
   end
@@ -21,10 +22,10 @@ class KnightRiderHtml
   def print_cast(file)
     file.puts "<h1>Knight Rider Cast</h1>"
     @knight_rider.characters.each do |char|
-      file.puts "<h2>#{char.name}</h2>"
-      file.puts "<h3>#{char.actor}</h3>"
-      file.puts "<h3>#{char.description}</h3>"
-      file.puts "<h3>#{2017 - char.birth_year}</h3>"
+      file.puts "<h2>Character Name: #{char.name}</h2>"
+      file.puts "<h3>Actor: #{char.actor}</h3>"
+      file.puts "<h3>Description: #{char.description}</h3>"
+      file.puts "<h3>Age: #{2017 - char.birth_year}</h3>"
       file.puts "<img src= #{char.headshot_url}</img>"
     end
   end
