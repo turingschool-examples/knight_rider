@@ -27,4 +27,8 @@ class HtmlTest < Minitest::Spec
     end
   end
 
+  after do
+    File.delete('./output/knight_rider.html') if File.exist?('./output/knight_rider.html')
+  end
+
 end
