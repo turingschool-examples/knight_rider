@@ -5,13 +5,7 @@ class HTML
   end
 
   def build_html
-    %{
-      <html>
-        <body>
-          <header>Knight Rider Cast</header>
-        </body>
-      </html>
-    }
+    File.read('./data/template.html')
   end
 
   def print_to_file(file_name)
