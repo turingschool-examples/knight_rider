@@ -15,6 +15,7 @@ class KnightRiderTest < Minitest::Test
 
   def test_characters
     assert_instance_of Array, @knight_rider.characters
+    assert_equal 3, @knight_rider.characters.count
   end
 
   def test_creator
@@ -26,6 +27,7 @@ class KnightRiderTest < Minitest::Test
   end
 
   def test_total_payroll
+    skip
     assert_equal 1001000000, @knight_rider.total_payroll
   end
 
