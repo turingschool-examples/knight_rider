@@ -4,12 +4,12 @@
     <ul>
       <% show.characters.each do |character| %>
       <li>
-        name: <%= character.name %>
-        actor: <%= character.actor %>
-        description: <%= character.description %>
-        birth_year: <%= character.birth_year %>
-        salary: <%= character.salary %>
-        headshot: <%= "<img src='#{character.headshot_url}'>" %>
+        name: <%= character.name %> <br>
+        actor: <%= character.actor %> <br>
+        description: <%= character.description %> <br>
+        birth_year: <%= character.birth_year %> <br>
+        salary: <%= character.salary %> <br>
+        headshot: <%= "<img src='#{character.headshot_url}' style='height:128px;'>" %> <br>
       </li>
       <% end %>
     </ul>
