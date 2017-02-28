@@ -16,4 +16,16 @@ class KnightRider
     @headshot_url = headshot_url
     @character_array = []
   end
+
+  def characters
+    @characters << @name
+  end
+
+  def creator
+    knight_rider.actor
+  end
+
+  def network
+    
+  end
 end

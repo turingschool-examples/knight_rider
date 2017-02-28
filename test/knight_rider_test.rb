@@ -78,15 +78,4 @@ class KnightRiderTest < Minitest::Test
     michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
     assert_equal "https://goo.gl/Qk0pwL", michael_knight.headshot_url
   end
-
-  def test_new_object
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
-    assert_instance_of KnightRider, knight_rider
-  end
-
-  def test_there_is_an_array
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
-    assert_equal [], knight_rider.character_array
-  end
-  
 end
