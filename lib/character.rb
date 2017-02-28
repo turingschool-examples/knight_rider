@@ -11,7 +11,7 @@ class Character
     @actor = actor
     @description = description
     @birth_year = birth_year.to_i
-    @salary = salary.to_i
+    @salary = salary.gsub(/[,]/, "").to_i
     @headshot_url = headshot_url
   end
 
