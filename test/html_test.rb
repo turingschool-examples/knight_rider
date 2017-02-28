@@ -51,6 +51,10 @@ class HtmlTest < Minitest::Spec
     it "should make a page header" do
       html.must_include('<header>Knight Rider Cast</header>')
     end
+
+    it "should list characters from the show" do
+      html.must_include("KITT")
+    end
   end
 
 
