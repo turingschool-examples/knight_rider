@@ -1,9 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/knight_rider'
-require './lib/character'
 
-class TestKnightRider < Minitest::Test
+class KnightRiderTest < Minitest::Test
   attr_reader :michael_knight, :kitt, :devon_miles
   def setup
     @michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")

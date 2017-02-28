@@ -1,3 +1,5 @@
+require './lib/character'
+
 class KnightRider
 
   attr_reader :characters, :creator, :network
