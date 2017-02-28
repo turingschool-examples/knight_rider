@@ -2,9 +2,13 @@ class KnightRider
   attr_accessor :characters
   attr_reader :creator, :network
   def initialize(characters, creator, network)
-    @characters = Array.new(0)
+    @characters = []
     @creator = creator
     @network = network
+  end
+
+  def add_character
+    characters << knight_rider.add_character()
   end
 
 
