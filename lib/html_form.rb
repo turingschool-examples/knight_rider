@@ -3,7 +3,7 @@ require './lib/knight_rider'
 require 'erb'
 require 'pry'
 
-template_letter = File.read "./lib/html_form.erb"
+template_letter = File.read "./io_files/html_form.erb"
 erb_template = ERB.new template_letter
 
 @kitt = Character.new("KITT", "William Daniels",
@@ -19,4 +19,5 @@ characters = @knight_rider.characters
 
 form_letter = erb_template.result(binding)
 
-puts form_letter
+output_letter = File.open("./io_files/html_output_file.html", "w")
+output_letter.puts(form_letter)
