@@ -2,8 +2,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/character'
 
-
-
 class CharacterTest < Minitest::Test
   
   def setup
@@ -31,6 +29,7 @@ class CharacterTest < Minitest::Test
   end
   
   def test_salary_returns_salary_as_float
+    assert_instance_of Float, @kitt.salary
     assert_equal 0.0, @kitt.salary
   end
 
@@ -59,5 +58,4 @@ class CharacterTest < Minitest::Test
     assert_equal 1000000000, michael_knight.salary
     assert_equal "https://goo.gl/Qk0pwL", michael_knight.headshot_url
   end
-
 end

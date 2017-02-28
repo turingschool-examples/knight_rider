@@ -8,6 +8,5 @@ class Character
   @birth_year = birth_year
   @salary = salary.delete(',').to_f
   @headshot_url = headshot_url
-
   end
 end
