@@ -9,9 +9,8 @@
         description:
         birth_year:
         salary:
-        headshot:
+        headshot: <%= "<img src='#{character.headshot_url}'>" %>
       </li>
-      <%= character %>
       <% end %>
     </ul>
   </body>
