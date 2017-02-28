@@ -20,8 +20,8 @@ class KnightRiderCastPage
   end
 
   def write_page
-    new = File.open('knight_rider_cast_page', 'w') { |file| file.write(make_page) }
+    new = File.open('knight_rider_cast_page.html', 'w') { |file| file.write(make_page) }
     binding.pry
   end
-  
+
 end

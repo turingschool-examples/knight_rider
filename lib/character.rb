@@ -8,4 +8,8 @@ class Character
     @salary = salary.gsub(/[,]/,'').to_f
     @headshot_url = headshot_url
   end
+
+  def age
+    2017 - birth_year
+  end
 end
