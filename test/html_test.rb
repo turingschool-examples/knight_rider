@@ -21,9 +21,10 @@ class HtmlTest < Minitest::Spec
       html.must_be_instance_of(HTML)
     end
 
-    it "should know how to make an html file" do
+    it "should know how to make an html file from show info" do
       html.print_to_file('knight_rider')
       assert File.exist?('./output/knight_rider.html')
+      File.read('./output/knight_rider.html').must_include('KITT')
     end
 
     it "should build an html string" do
