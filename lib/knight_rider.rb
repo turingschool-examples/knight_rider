@@ -11,5 +11,9 @@ class KnightRider
   def total_payroll
     characters.map { |char| char.salary }.reduce(:+)
   end
+
+  def highest_grossing_actor
+    characters.max_by { |char| char.salary }
+  end
 end
 
