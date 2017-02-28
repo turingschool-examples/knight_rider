@@ -12,13 +12,13 @@ class KnightRider
   
   def total_payroll
     @characters.reduce(0) do |total, character|
-      total + character.salary
+      total + character.salary.gsub(/[^\d^\.]/, '').to_f
     end
   end
 
   def highest_grossing_actor
     @characters.max_by do |character|
-      character.salary
+      character.salary.gsub(/[^\d^\.]/, '').to_f
     end
   end
 end

@@ -2,7 +2,7 @@ require './test/test_helper'
 
 class CharacterTest < Minitest::Test
   def setup
-    @character = Character.new("name", "actor", "description", 1952, 1000000000.0, "http://www.google.com")
+    @character = Character.new("name", "actor", "description", 1952, "1000000000.0", "http://www.google.com")
   end
 
   def test_it_exists
@@ -30,7 +30,7 @@ class CharacterTest < Minitest::Test
   end
 
   def test_it_can_make_that_money
-    assert_equal 1000000000.0, @character.salary
+    assert_equal '1000000000.0', @character.salary
     refute_equal 3, @character.salary
   end
 

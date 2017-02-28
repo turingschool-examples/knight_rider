@@ -5,7 +5,7 @@ class Character
     @actor = actor
     @description = description
     @birth_year = birth_year
-    @salary = salary.gsub(/[^\d^\.]/, '').to_f
+    @salary = salary
     @headshot_url = headshot_url
   end
 end
