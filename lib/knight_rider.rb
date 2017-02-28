@@ -1,4 +1,3 @@
-require 'pry'
 class KnightRider
 	attr_reader :characters, :creator, :network
 	def initialize(characters, creator, network)
@@ -22,7 +21,5 @@ class KnightRider
 			character.salary
 		end
 	end
-
-
 end
 
