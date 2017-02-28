@@ -1,5 +1,7 @@
 require 'erb'
 class HTML
+
+  attr_reader :show, :html
   def initialize(tv_show)
     @show = tv_show
     @html = build_html
@@ -14,7 +16,7 @@ class HTML
 
   def print_to_file(file_name)
     html_doc = File.open('./output/' +file_name + '.html', 'w')
-    # html.puts()
+    html_doc.puts(html)
     html_doc.close
   end
 end
