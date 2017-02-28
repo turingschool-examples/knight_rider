@@ -15,9 +15,7 @@ class TestCharacter < Minitest::Test
     assert_equal "William Daniels", kitt.actor
     assert_equal "Pontiac Trans-Am", kitt.description
     assert_equal 1982, kitt.birth_year
-    assert_equal "0.00", kitt.salary
+    assert_equal 0, kitt.salary
     assert_equal "https://goo.gl/lSFYQo",kitt.headshot_url
   end
-
-  def 
 end
