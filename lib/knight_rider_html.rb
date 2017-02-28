@@ -33,8 +33,8 @@ class KnightRiderHtml
 
 end
 
-writer = KnightRiderHtml.new
-writer.write_html("./data/html_output.html")
-binding.pry
+# writer = KnightRiderHtml.new
+# writer.write_html("./data/html_output.html")
+# binding.pry
 
 ""
