@@ -1,6 +1,8 @@
+require './lib/character'
+
 class KnightRider
 
-  def initialize(data)
+  def initialize(*data)
 
   end
 
