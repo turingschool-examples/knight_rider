@@ -20,6 +20,12 @@ class HtmlTest < Minitest::Spec
     it "should make an HTML object" do
       html.must_be_instance_of(HTML)
     end
+
+    it "should know how to make an html file" do
+      html.print_to_file('knight_rider')
+      File.exist?('./output/knight_rider.html').must_be(:true)
+
+    end
   end
 
 end
