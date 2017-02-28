@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/emoji'
 require './lib/knight_rider'
+require './lib/character'
 
 class KnightRiderTest < Minitest::Spec
 
