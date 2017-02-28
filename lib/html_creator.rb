@@ -17,7 +17,13 @@ class HTML
 	def characters_attributes
 		movie.characters.each do |char|
 			@char_num += 1
-			@char_once << {"## Character_#{@char_num}" => ["Name:        #{char.name}", "Actor:       #{char.actor}", "Description: #{char.description}", "Age:         #{char.age}", "Headshot:    #{char.headshot_url}", "\n"].join("\n") }
+			@char_once << {"## Character_#{@char_num}" => ["Name:        #{char.name}",
+																										 "Actor:       #{char.actor}",
+																										 "Description: #{char.description}",
+																										 "Age:         #{char.age}",
+																										 "Headshot:    #{char.headshot_url}",
+																										 "\n"].join("\n")
+										}
 		end
 	end
 
