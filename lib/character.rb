@@ -1,3 +1,5 @@
+require 'erb'
+
 class Character
 
   attr_reader :name, :actor, :description, :birth_year, :salary, :headshot_url

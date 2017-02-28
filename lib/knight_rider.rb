@@ -1,4 +1,5 @@
-require 'pry'
+require 'erb'
+
 class KnightRider
 
   attr_reader :characters, :creator, :network

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/character'
-require 'pry'
+
 class CharacterTest <Minitest::Test
 
   attr_reader :kitt, :michael_knight, :devon_miles
