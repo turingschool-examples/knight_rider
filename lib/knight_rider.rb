@@ -10,12 +10,11 @@ class KnightRider
 
   def total_payroll
     salary = characters.map {|item| item.salary}
-    end
+
     total_payroll = salary.reduce(:+)
   end
 
   def highest_grossing_actor
     characters.max_by {|item| item.salary}
-    end
   end
 end
