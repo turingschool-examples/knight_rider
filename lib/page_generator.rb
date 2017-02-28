@@ -6,12 +6,17 @@ class PageGenerator
 
   def initialize(data)
     @data = data
-    @template = File.read("templates/page_template.erb")
   end
 
-  def load_page
-
+  def generate_page
+    actor_data = @data.characters
+    html_template = File.read "templates/page_template.html.erb"
+    page = ERB.new html_template
+    page.result(binding)
   end
 
+  def save_html_output
+    File.open("output.html", "w+"){|file| file.write(output)}
+  end
 
 end
