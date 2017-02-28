@@ -15,18 +15,22 @@ class CharacterTest < Minitest::Test
 
   def test_does_it_exist
     assert_instance_of Character, kitt
+    assert_instance_of Character, michael_knight
   end
 
   def test_it_can_return_name
     assert_equal "KITT", kitt.name
+    assert_equal "Michael Knight", michael_knight.name
   end
 
   def test_it_can_return_actor
     assert_equal "David Hasselhoff", michael_knight.actor
+    assert_equal "William Daniels", kitt.actor
   end
 
   def test_it_can_return_description
     assert_equal "Pontiac Trans-Am", kitt.description
+    assert_equal "A special type of hero", michael_knight.description
   end
 
   def test_it_can_return_birth_year_as_integer
