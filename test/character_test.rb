@@ -52,5 +52,10 @@ class CharacterTest < Minitest::Test
     assert_equal "https://goo.gl/Qk0pwL", @michael_knight.headshot_url
   end
 
+  def test_it_can_return_age
+    assert_equal 35, @kitt.age
+    assert_equal 65, @michael_knight.age
+  end
+
 
 end
