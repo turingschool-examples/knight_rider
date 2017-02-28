@@ -1,5 +1,11 @@
 class KnightRider
-  attr_reader :name, :actor, :description, :birth_year, :salary, :headshot_url
+  attr_reader :name,
+              :actor,
+              :description,
+              :birth_year,
+              :salary,
+              :headshot_url,
+              :character_array
 
   def initialize(name, actor, description, birth_year, salary, headshot_url)
     @name = name
@@ -8,5 +14,6 @@ class KnightRider
     @birth_year = birth_year
     @salary = salary
     @headshot_url = headshot_url
+    @character_array = []
   end
 end
