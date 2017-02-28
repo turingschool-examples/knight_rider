@@ -7,5 +7,9 @@ class KnightRider
     @creator = creator
     @network = network    
   end
+
+  def total_payroll
+    characters.map { |char| char.salary }.reduce(:+)
+  end
 end
 

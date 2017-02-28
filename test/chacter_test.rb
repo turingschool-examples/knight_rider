@@ -31,12 +31,17 @@ class CharacterTest < Minitest::Test
   end
   
   def test_salary_returns_salary_as_float
-    assert_equal 0, @kitt.salary
+    assert_equal 0.0, @kitt.salary
   end
 
   def test_salary_can_take_string_with_commas
     beth = Character.new("BETH", "herself", "Pontiac Trans-Am", 1988, "1,000,000,000.00", "https://goo.gl/lSFY32")
-    assert_equal 1000000000.00, beth.salary
+    assert_equal 1000000000, beth.salary
+  end
+
+  def test_salary_can_take_cents
+    beth = Character.new("BETH", "herself", "Pontiac Trans-Am", 1988, "1,000,000,000.57", "https://goo.gl/lSFY32")
+    assert_equal 1000000000.57, beth.salary
   end
 
   def test_headshot_url_returns_headshot_url
