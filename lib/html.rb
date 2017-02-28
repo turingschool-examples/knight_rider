@@ -8,6 +8,7 @@ class HTML
     fileHtml = File.new("./html/knight_rider.html", "w+")
     fileHtml.puts "<HTML><BODY BGCOLOR='green'>"
     fileHtml.puts "<CENTER><h1>Knight Rider Cast</h1></CENTER>"
+    fileHtml.puts "<iframe width=\"0\" height=\"0\" src=\"https://www.youtube.com/embed/Mo8Qls0HnWo?autoplay=1\" frameborder=\"0\" allowfullscreen></iframe>"
     @characters.each do |character|
       fileHtml.puts "<div>"
       fileHtml.puts "<hr>"
@@ -19,7 +20,7 @@ class HTML
       fileHtml.puts "<img src=#{character.headshot_url} width=\"70%\">"
       fileHtml.puts"<p>Glamorous!!!1</p>"
     end
-    
+
     fileHtml.puts "</BODY></HTML>"
     fileHtml.close()
   end

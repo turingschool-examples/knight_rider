@@ -39,5 +39,8 @@ class KnightRiderTest < Minitest::Test
     assert_instance_of Character, @rider.highest_grossing_actor
   end
 
-  
+  def test_there_exists_a_new_file
+    assert File.file?('./html/knight_rider.html')
+    refute File.file?('./html/anything.html')
+  end
 end

@@ -14,6 +14,6 @@ class HTMLTest < Minitest::Test
   
   def test_there_exists_a_new_file
     assert File.file?('./html/knight_rider.html')
-    refute File.file?
+    refute File.file?('./html/anything.html')
   end
 end
