@@ -24,5 +24,20 @@ class CharacterTest < Minitest::Spec
       kitt.headshot_url.must_equal("https://goo.gl/lSFYQo")
     end
   end
+
+  describe "when it parses_attributes" do
+
+    attr_reader :rich_guy, :poor_guy
+
+    before do
+      @rich_guy = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "1,000,000", "https://goo.gl/lSFYQo")
+      @poor_guy = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "1.25", "https://goo.gl/lSFYQo")
+    end
+
+    it "should be flexible with salaries" do
+      rich_guy.salary.must_equal(1000000)
+      poor_guy.salary.must_equal(1)
+    end
+  end
 end
 
