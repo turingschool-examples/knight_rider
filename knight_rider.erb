@@ -5,14 +5,14 @@
 </head>
 <body>
   <table>
-  <tr><th>Name</th><th>Actor</th><th>Description</th><th>Birth Year</th><th>Headshot</th></tr>
+  <tr><th>Name</th><th>Actor</th><th>Description</th><th>Age</th><th>Headshot</th></tr>
     <% characters.each do |character| %>
       <tr>
         <td><%= "#{character.name}" %></td>
         <td><%= "#{character.actor}" %></td>
         <td><%= "#{character.description}" %></td>
-        <td><%= "#{character.birth_year}" %></td>
-        <td><%= "#{character.headshot_url}" %></td>
+        <td><%= "#{character.age}" %></td>
+        <td><%= "<img src=" +"#{character.headshot_url}" + ">" %></td>
       </tr>
     <% end %>
   </table>

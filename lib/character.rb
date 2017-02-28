@@ -9,4 +9,8 @@ class Character
     @salary = salary.delete(',').to_i
     @headshot_url = headshot_url
   end
+
+  def age
+    Time.now.year - birth_year
+  end
 end

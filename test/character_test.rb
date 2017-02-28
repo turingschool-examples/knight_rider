@@ -19,4 +19,10 @@ class CharacterTest < Minitest::Test
     assert_equal 0, kitt.salary
     assert_equal "https://goo.gl/lSFYQo",kitt.headshot_url
   end
+
+  def test_age
+    kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
+
+    assert_equal 35, kitt.age
+  end
 end
