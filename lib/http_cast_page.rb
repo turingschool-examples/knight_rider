@@ -1,5 +1,9 @@
 require 'socket'
 require 'pry'
+require './lib/character'
+require './lib/knight_rider'
+require './lib/html_page_creator'
+require './test/test_setup'
 
 class HttpCastPage
   attr_reader :cast_list, :client
@@ -49,5 +53,10 @@ class Response
 end
 
 if __FILE__ == $0
-  HttpCastPage.new(9292, "./io_files/html_output_file.html").start
+  file_path = "./io_files/html_output_file.html"
+  include TestSetup
+  unless File.file?(file_path)
+    setup
+  end
+  HttpCastPage.new(9292, file_path).start
 end
