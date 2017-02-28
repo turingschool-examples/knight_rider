@@ -13,4 +13,11 @@ class KnightRider
       payroll += character.salary
     end
   end
+
+  def highest_grossing_actor
+    characters.reduce do |best_paid_actor, actor|
+      best_paid_actor = actor if actor.salary > best_paid_actor.salary
+      best_paid_actor
+    end
+  end
 end
