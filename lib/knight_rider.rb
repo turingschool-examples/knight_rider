@@ -26,6 +26,6 @@ class KnightRider
   end
 
   def network
-    
+
   end
 end
