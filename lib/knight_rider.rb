@@ -19,4 +19,6 @@ class KnightRider
   def highest_grossing_actor
     characters.max_by(&:salary)
   end
+
+  
 end
