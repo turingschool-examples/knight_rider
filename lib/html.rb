@@ -1,9 +1,10 @@
 class HTML
   def initialize(tv_show)
-    @html = build_html(tv_show)
+    @show = tv_show
+    @html = build_html
   end
 
-  def build_html(tv_show)
+  def build_html
     %{
       <html>
       <html>
