@@ -9,9 +9,9 @@ class HtmlTest < Minitest::Spec
   attr_reader :knight_rider, :html
 
   before do
-      kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
-      michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-      devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
+    kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
+    michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
+    devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
     @knight_rider = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
     @html = HTML.new(knight_rider)
   end
@@ -25,10 +25,16 @@ class HtmlTest < Minitest::Spec
       html.print_to_file('knight_rider')
       assert File.exist?('./output/knight_rider.html')
     end
+
+    it "should build an html string" do
+      html.html.must_be_instance_of(String)
+      html.html.must_include('<html>')
+    end
+
+    after do
+      File.delete('./output/knight_rider.html') if File.exist?('./output/knight_rider.html')
+    end
   end
 
-  after do
-    File.delete('./output/knight_rider.html') if File.exist?('./output/knight_rider.html')
-  end
 
 end
