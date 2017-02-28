@@ -9,23 +9,7 @@ class Character
     @headshot_url = headshot_url
   end
 end
-# kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
 
-# michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
-# #=> <Character:...>
-# michael_knight.name
-# #=> "Michael Knight"
-# michael_knight.actor
-# #=> "David Hasselhoff"
-# michael_knight.description
-# #=> "A special type of hero"
-# michael_knight.birth_year
-# #=> 1952
-# michael_knight.salary
-# #=> 1000000000
-# michael_knight.headshot_url
-# #=> "https://goo.gl/Qk0pwL"
-#
 # knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
 # knight_rider.characters
 # #=> [<Character:...>, <Character:...>]

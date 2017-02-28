@@ -4,6 +4,7 @@ require './lib/character'
 
 
 class CharacterTest < Minitest::Test
+  attr_reader :kitt, :mk
   def setup
         @kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
         @mk = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
@@ -35,13 +36,11 @@ class CharacterTest < Minitest::Test
 
   def test_it_gets_salary
     assert_equal 0, @kitt.salary.to_i
-    assert_equal 1000000000, @mk.salary.gsub!(/([,.])/, '')[0..6].to_i
+    assert_equal 1000000, @mk.salary.gsub!(/([,.])/, '')[0..6].to_i
   end
 
   def test_it_gets_headshot_url
     assert_equal "https://goo.gl/lSFYQo", @kitt.headshot_url
       assert_equal "https://goo.gl/Qk0pwL", @mk.headshot_url
   end
-
-
 end
