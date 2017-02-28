@@ -1,14 +1,16 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/character'
-
+require 'pry'
 class CharacterTest <Minitest::Test
 
-  attr_reader :kitt, :michael_knight
+  attr_reader :kitt, :michael_knight, :devon_miles
 
   def setup
     @kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     @michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
+    @devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
+
   end
 
   def test_class_character_exists
@@ -36,8 +38,9 @@ class CharacterTest <Minitest::Test
   end
 
   def test_character_salary
-    assert_equal "0.00", kitt.salary
-    assert_equal "1,000,000,000.00", michael_knight.salary
+    assert_equal 0, kitt.salary
+    assert_equal 1000000000, michael_knight.salary
+    assert_equal 1000000, devon_miles.salary
   end
 
   def test_character_headshot_url
