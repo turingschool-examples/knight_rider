@@ -49,5 +49,5 @@ class Response
 end
 
 if __FILE__ == $0
-  HttpCastPage.new(9292, "./io_files/html_output_file_1.html").start
+  HttpCastPage.new(9292, "./io_files/html_output_file.html").start
 end
