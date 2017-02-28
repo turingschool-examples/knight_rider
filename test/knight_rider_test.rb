@@ -36,18 +36,4 @@ class KnightRiderTest < Minitest::Test
 
     assert_equal "Michael Knight", knight_rider.highest_grossing_actor.name
   end
-
-  def test_make_html_page
-    knight_rider = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
-
-    knight_rider.make_html_page
-    html = File.read 'knight_rider.html'
-
-    assert_instance_of String, html
-    assert html.include? '<td>KITT</td>'
-    assert html.include? '<td>David Hasselhoff</td>'
-    assert html.include? '<td>35</td>'
-    assert html.include? 'img src=https://goo.gl/Qk0pwL'
-  end
-
 end
