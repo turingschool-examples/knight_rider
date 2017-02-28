@@ -1,17 +1,26 @@
+require './lib/character'
 class KnightRider
   attr_accessor :characters
   attr_reader :creator, :network
   def initialize(characters, creator, network)
-    @characters = []
+    @characters =
     @creator = creator
     @network = network
   end
 
   def add_character
-    characters << knight_rider.add_character()
+    characters << [@kitt, @michael_knight, @devon_miles]
   end
 
+  def total_payroll
+    characters.reduce(0) do |total, character|
+      total + character.salary.split(',').join.to_f
+    end
+  end
 
+  def highest_grossing_actor
+   characters.max_by.salary
+  end
 end
 
 # knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
