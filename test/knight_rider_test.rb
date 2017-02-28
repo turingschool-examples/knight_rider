@@ -38,4 +38,6 @@ class KnightRiderTest < Minitest::Test
     assert_equal @character_1, @rider.highest_grossing_actor
     assert_instance_of Character, @rider.highest_grossing_actor
   end
+
+  
 end
