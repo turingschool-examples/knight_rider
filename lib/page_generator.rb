@@ -13,7 +13,7 @@ class PageGenerator
     @data.characters.map do |x|
       output_data << [x.name, x.actor, x.description, x.age, x.headshot_url]
     end
-    output_data.flatten
+    output_data
   end
 
   def generate_page

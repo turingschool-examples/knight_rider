@@ -20,7 +20,7 @@ class PageGeneratorTest < Minitest::Test
   end
 
   def test_can_generate_actor_data
-    assert_includes @pg.generate_actor_data, "Michael Knight"
+    assert_includes @pg.generate_actor_data[1], "Michael Knight"
   end
 
   def test_save_html_output
