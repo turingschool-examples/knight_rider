@@ -1,3 +1,4 @@
+require 'erb'
 class HTML
   def initialize(tv_show)
     @show = tv_show
@@ -5,7 +6,9 @@ class HTML
   end
 
   def build_html
-    File.read('./data/template.html')
+    template = File.read('./data/template.html')
+    erb_template = ERB.new(template)
+    erb_template.result(binding)
   end
 
   def print_to_file(file_name)
