@@ -1,3 +1,4 @@
+
 class KnightRider
 
   attr_reader :characters, :creator, :network
@@ -17,5 +18,5 @@ class KnightRider
   def highest_grossing_actor
     characters.max_by {|character| character.salary}
   end
-  
+
 end
