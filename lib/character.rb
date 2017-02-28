@@ -10,4 +10,7 @@ class Character
 		@headshot_url = headshot_url
 	end
 	
+	def age
+		Time.now.year - birth_year
+	end
 end

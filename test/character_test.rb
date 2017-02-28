@@ -1,6 +1,6 @@
 require'minitest/autorun'
 require'minitest/pride'
-require'./lib/knight_rider'
+require'./lib/character'
 
 class CharacterTest < Minitest::Test
 	attr_reader :kitt, :michael_knight
@@ -30,6 +30,7 @@ class CharacterTest < Minitest::Test
 		assert_equal 1982, kitt.birth_year
 		assert_equal 0, kitt.salary
 		assert_equal "https://goo.gl/lSFYQo", kitt.headshot_url
+		assert_equal 35, kitt.age
 
 		assert_equal "Michael Knight", michael_knight.name
 		assert_equal "David Hasselhoff", michael_knight.actor
@@ -37,5 +38,6 @@ class CharacterTest < Minitest::Test
 		assert_equal 1952, michael_knight.birth_year
 		assert_equal 1000000000, michael_knight.salary
 		assert_equal "https://goo.gl/Qk0pwL", michael_knight.headshot_url
+		assert_equal 65, michael_knight.age
 	end
 end
