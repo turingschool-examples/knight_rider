@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1>Knight Rider Cast</h1>
+    <% characters.each do |character| %>
+        <h2><%="#{character.name}"%></h2>
+        <ul>
+          <li>Played by <%="#{character.actor}"%></li>
+          <li><%="#{character.description}"%></li>
+          <li>#{character.age}</li>
+          </ul>
+          <img src="<%="#{character.headshot_url}"%>" width=200>
+        <% end %>
+  </body>
+</html>
