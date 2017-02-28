@@ -8,7 +8,6 @@ class KnightRiderCastPage
   def initialize(letter, knight_rider)
     @letter = File.read(letter)
     @knight_rider = knight_rider
-    binding.pry
   end
 
   def create_erb_template
@@ -16,6 +15,13 @@ class KnightRiderCastPage
   end
 
   def make_page
-    create_erb_template.result
+    actors = knight_rider.characters
+    create_erb_template.result(binding)
   end
+
+  def write_page
+    new = File.open('knight_rider_cast_page', 'w') { |file| file.write(make_page) }
+    binding.pry
+  end
+  
 end

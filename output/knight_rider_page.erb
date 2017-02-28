@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <meta charset='utf-8'>
@@ -7,15 +8,15 @@
   <h1>Knight Rider Cast</h1>
   <table>
   <tr><th>Name</th><th>Actor</th><th>Description</th><th>Age</th><th>Photo</th></tr>
-    <% legislators.each do |legislator| %>
+    <% actors.each do |character| %>
       <tr>
-        <td><%= "#{legislator.first_name} #{legislator.last_name}" %></td>
-        <td><%= "#{legislator.website}" %></td>
+        <td><%= "#{character.name}" %></td>
+        <td><%= "#{character.actor}" %></td>
+        <td><%= "#{character.description}" %></td>
+        <td><%= "#{character.birth_year}" %></td>
+        <td><%= "#{character.headshot_url}" %></td>
       </tr>
     <% end %>
   </table>
 </body>
 </html>
-
-
- 
