@@ -13,6 +13,17 @@ class KnightRiderTest < Minitest::Test
   end
 
   def test_it_has_creator
-    assert_equal
+    assert_equal "glen", @rider.creator
+    refute_equal "eric", @rider.creator
+  end
+
+  def test_it_has_characters
+    assert_equal 2, @rider.characters.length
+    assert_equal Character, @rider.characters.first.class
+  end
+
+  def test_it_has_newtowrk
+    assert_equal "NBC", @rider.network
+    refute_equal "ABC", @rider.network
   end
 end
