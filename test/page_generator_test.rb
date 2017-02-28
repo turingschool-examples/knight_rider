@@ -15,13 +15,12 @@ class PageGeneratorTest < Minitest::Test
     assert_instance_of PageGenerator, @pg
   end
 
-  def test_it_can_read_template
-    skip
-    assert_includes @pg.template, "</html>"
+  def test_can_read_template
+    assert_includes @pg.generate_page, "</html>"
   end
 
-  def test_can_populate_html_with_character_information
-    assert_includes @pg.generate_page, "Michael Knight"
+  def test_can_generate_actor_data
+    assert_includes @pg.generate_actor_data, "Michael Knight"
   end
 
   def test_save_html_output
