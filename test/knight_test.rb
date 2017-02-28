@@ -16,7 +16,7 @@ class KnightTest < Minitest::Test
 
   def test_there_are_objects_in_array
     knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
-    assert_equal [<Character:...>], <Character:...>], knight_rider.characters
+    assert_equal 2, knight_rider.characters.count
   end
 
   def test_creator

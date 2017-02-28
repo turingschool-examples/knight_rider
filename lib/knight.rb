@@ -12,3 +12,4 @@ class KnightRider
   def characters
     @characters << @name
   end
+end
