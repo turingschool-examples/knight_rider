@@ -29,9 +29,9 @@ class HTML
 
 	def zipped
 		value, key = [], []
-		char_once.map do |ugh| 
-			value << ugh.values
-			key << ugh.keys
+		char_once.map do |hash| 
+			value << hash.values
+			key << hash.keys
 		end
 		key.zip(value).flatten.join("\n")
 	end
