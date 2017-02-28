@@ -40,5 +40,17 @@ class KnightRiderTest < Minitest::Test
     assert_equal "NBC", @knight_rider.network
   end
 
+  def test_it_returns_total_payroll
+    skip
+    assert_equal 1000000000, @michael_knight.salary
+    assert_equal 1000000, @devon_miles.salary
+    assert_equal 1001000000, @knight_rider.total_payroll
+  end
+
+  def test_it_returns_highest_grossing_actor
+    skip
+    assert_instance_of Character, @knight_rider.highest_grossing_actor
+    assert_equal @michael_knight, @knight_rider.highest_grossing_actor
+  end
 
 end
