@@ -7,7 +7,10 @@ class HTML
   def build_html
     %{
       <html>
-      <html>
+        <body>
+          <header>Knight Rider Cast</header>
+        </body>
+      </html>
     }
   end
 
