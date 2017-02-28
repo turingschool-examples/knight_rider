@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/knight_rider'
-require 'pry'
 
 
 class KnightRiderTest < Minitest::Test
@@ -13,7 +12,6 @@ class KnightRiderTest < Minitest::Test
 
   def test_it_exists
     assert_instance_of KnightRider, @knight_rider
-    # binding.pry
   end
 
   def test_characters_returns_characters
