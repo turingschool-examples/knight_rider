@@ -16,7 +16,7 @@ class PageGenerator
   end
 
   def save_html_output
-    File.open("output.html", "w+"){|file| file.write(output)}
+    File.open("output.html", "w+"){|file| file.write(generate_page)}
   end
 
 end

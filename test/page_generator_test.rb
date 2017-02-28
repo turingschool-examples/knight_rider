@@ -24,5 +24,10 @@ class PageGeneratorTest < Minitest::Test
     assert_includes @pg.generate_page, "Michael Knight"
   end
 
+  def test_save_html_output
+    saved_char_count = @pg.save_html_output
+    assert saved_char_count > 60
+  end
+
 
 end
