@@ -20,6 +20,16 @@ class HttpCastPageTest < Minitest::Test
     assert_equal output_file_1, server1.cast_list.split("\n").map {|item| item.strip}
   end
 
+  def test_it_loads_page_to_server
+    threads = []
+    threads << Thread.new{server.start}
+    threads << Thread.new do
+      $close = true
+      assert_equal predicted_output, conn.get(path).body
+    end
+    threads.each {|thread| thread.join}
+end
+
   def output_file_1
     ["<html>",
     "<body>",
