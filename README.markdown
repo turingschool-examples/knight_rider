@@ -2,7 +2,7 @@
 
 Writing your own tests to drive development, write source code to deliver the following functionality.
 
-You will need to fork and clone this repo before writing your code. To submit your work, create a pull request to the repo you forked from. Good luck!
+You will need to fork and clone this repo before writing your code. To submit your work, create a pull request to the repo you forked from with branch name `firstname_lastname_knight_rider`. Good luck!
 
 ## Iteration 1
 
