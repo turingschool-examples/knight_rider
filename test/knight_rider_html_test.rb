@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/knight_rider_html'
 
-
 class KnightRiderHtmlTest < Minitest::Test
 
   def setup 
