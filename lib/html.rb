@@ -1,5 +1,13 @@
 class HTML
-  def initialize(knight_rider)
+  def initialize(tv_show)
+    @html = build_html(tv_show)
+  end
+
+  def build_html(tv_show)
+    %{
+      <html>
+      <html>
+    }
   end
 
   def print_to_file(file_name)

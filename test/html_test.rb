@@ -27,8 +27,8 @@ class HtmlTest < Minitest::Spec
     end
 
     it "should build an html string" do
-      html.html.must_be_instance_of(String)
-      html.html.must_include('<html>')
+      html.build_html(knight_rider).must_be_instance_of(String)
+      html.build_html(knight_rider).must_include('<html>')
     end
 
     after do
