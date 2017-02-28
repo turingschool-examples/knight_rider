@@ -1,10 +1,12 @@
 require'minitest/autorun'
 require'minitest/pride'
+require'./lib/html_creator'
 require'./lib/knight_rider'
 require'./lib/character'
+require'pry'
 
-class KnightRiderTest < Minitest::Test
-	attr_reader :kitt, :michael_knight, :knight_rider, :devon_miles, :knight_rider_v2
+class HTMLTest < Minitest::Test
+		attr_reader :kitt, :michael_knight, :knight_rider, :devon_miles, :knight_rider_v2, :html
 
 	def setup
 		@kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
@@ -12,25 +14,24 @@ class KnightRiderTest < Minitest::Test
 		@knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
 		@devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
 		@knight_rider_v2 = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
+		@html = HTML.new("Knight Rider Cast", knight_rider_v2)
 	end
 
-	def test_can_return_characters
-		assert_equal [kitt, michael_knight], knight_rider.characters
+	def test_can_return_attributes
+		assert_equal "Knight Rider Cast", html.header
+		assert_equal knight_rider_v2, html.movie
 	end
 
-	def test_can_return_creator
-		assert_equal "Glen Larson", knight_rider.creator
+	def test_makes_character_attributes_a_hash
+		assert_equal Array, html.characters_attributes.class
 	end
 
-	def test_can_return_network
-		assert_equal "NBC", knight_rider.network
+	def test_can_remove_outside_array
+		skip
+		assert_equal ({"## Character_1"=>"KITTWilliam Daniels\nPontiac Trans-Am\n35\nhttps://goo.gl/lSFYQo"}), html.characters_remove_hash_array[0..87]
 	end
 
-	def test_can_return_total_payroll
-		assert_equal 1001000000, knight_rider_v2.total_payroll
-	end
-
-	def test_can_return_highest_grossing_actor
-		assert_equal michael_knight, knight_rider_v2.highest_grossing_actor
+	def test_write
+		html.write
 	end
 end
