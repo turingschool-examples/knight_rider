@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/html_form'
+require './lib/html_page_creator'
 require './lib/character'
 require './lib/knight_rider'
 require 'erb'
