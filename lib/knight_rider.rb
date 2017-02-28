@@ -4,7 +4,7 @@ require './lib/characters'
 class KnightRider
   attr_reader  :cast, :creator, :network
   def initialize (cast, creator, network)
-    @cast = cast
+    @cast = []
     @creator = creator
     @network = network
 

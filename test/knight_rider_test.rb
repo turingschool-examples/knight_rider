@@ -8,10 +8,14 @@ require './lib/characters'
 
 class CharacterTest < Minitest::Test
   def setup
-    knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
+    @knight_rider = KnightRider.new([@kitt, @michael_knight], "Glen Larson", "NBC")
   end
 
   def test_it_has_a_cast
-    assert_equal [@kitt, @michael_knight], KnightRider.cast
+    assert_equal @kitt, @knight_rider.cast
+
+    # returns [nil, nil]
+    # still having trouble calling methods through class attributes
+
   end
 end
