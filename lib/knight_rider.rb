@@ -1,33 +1,16 @@
 require 'pry'
+require 'characters'
 
-class Character
-  attr_reader :name, :actor, :description, :birth_year, :salary, :headshot_url
-    def initialize(name, actor, decription, birth_year, salary, headshot_url)
-      @name = name
-      @actor = actor
-      @description = description
-      @birth_year = birth_year
-      @salary = salary
-      @headshot_url = headshot_url
-
-      binding.pry
-
-    end
+class KnightRider
 
 end
 
 
-# kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
-# #=> <Character:...>
-# kitt.name
-# #=> "KITT"
-# kitt.actor
-# #=> "William Daniels"
-# kitt.description
-# #=> "Pontiac Trans-Am"
-# kitt.birth_year
-# #=> 1982
-# kitt.salary
-# #=> 0
-# kitt.headshot_url
-# #=> "https://goo.gl/lSFYQo"
+
+# knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
+# knight_rider.characters
+# #=> [<Character:...>, <Character:...>]
+# knight_rider.creator
+# #=> "Glen Larson"
+# knight_rider.network
+# #=> "NBC"

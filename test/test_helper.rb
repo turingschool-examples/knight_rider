@@ -1,0 +1,5 @@
+require 'minitest'
+require 'minitest/pride'
+require 'minitest/autorun'
+require './lib/characters'
+require './lib/knight_rider'
