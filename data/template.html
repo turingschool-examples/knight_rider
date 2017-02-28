@@ -5,10 +5,10 @@
       <% show.characters.each do |character| %>
       <li>
         name: <%= character.name %>
-        actor:
-        description:
-        birth_year:
-        salary:
+        actor: <%= character.actor %>
+        description: <%= character.description %>
+        birth_year: <%= character.birth_year %>
+        salary: <%= character.salary %>
         headshot: <%= "<img src='#{character.headshot_url}'>" %>
       </li>
       <% end %>
