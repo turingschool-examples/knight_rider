@@ -8,6 +8,7 @@ class HTMLTest < Minitest::Test
     @rider = KnightRider.new([@character_1, @character_2, @character_3], "glen", "NBC")
     @html = HTML.new(@rider.characters)
   end
+  i_suck_and_my_tests_are_order_dependent!
   def test_it_exists
     assert @html
   end

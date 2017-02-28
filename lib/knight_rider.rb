@@ -1,10 +1,13 @@
 require './lib/character'
+require './lib/html'
+
 class KnightRider
   attr_reader :characters, :creator, :network
   def initialize(chars, creator, network)
     @characters = chars
     @creator = creator
     @network = network
+    HTML.new(@characters)
   end
   
   def total_payroll

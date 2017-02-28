@@ -7,8 +7,14 @@ class HTML
   def make_html
     fileHtml = File.new("./html/knight_rider.html", "w+")
     fileHtml.puts "<HTML><BODY BGCOLOR='green'>"
-    fileHtml.puts "<CENTER><h1>Knight Rider Cast</h1></CENTER>"
+    fileHtml.puts "<CENTER><h1>Knight Rider Cast</h1>"
     fileHtml.puts "<iframe width=\"0\" height=\"0\" src=\"https://www.youtube.com/embed/Mo8Qls0HnWo?autoplay=1\" frameborder=\"0\" allowfullscreen></iframe>"
+    character_format(fileHtml)
+    fileHtml.puts "</CENTER></BODY></HTML>"
+    fileHtml.close()
+  end
+
+  def character_format(fileHtml)
     @characters.each do |character|
       fileHtml.puts "<div>"
       fileHtml.puts "<hr>"
@@ -18,10 +24,7 @@ class HTML
       fileHtml.puts "</div>"
       fileHtml.puts"<p>and makes this many shekels to do it : <h1 style=\"color:red\">$#{character.salary}</h1></p>"
       fileHtml.puts "<img src=#{character.headshot_url} width=\"70%\">"
-      fileHtml.puts"<p>Glamorous!!!1</p>"
+      fileHtml.puts"<p>Good Job #{character.actor}</p>"
     end
-
-    fileHtml.puts "</BODY></HTML>"
-    fileHtml.close()
   end
 end
