@@ -5,7 +5,8 @@ class KnightRiderTest < Minitest::Test
   def setup 
     @character_1 = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
     @character_2 = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
-    @rider = KnightRider.new([@character_1, @character_2], "glen", "NBC")
+    @character_3 = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,001", "https://goo.gl/JsvAuV")
+    @rider = KnightRider.new([@character_1, @character_2, @character_3], "glen", "NBC")
   end
 
   def test_it_exists
@@ -18,12 +19,23 @@ class KnightRiderTest < Minitest::Test
   end
 
   def test_it_has_characters
-    assert_equal 2, @rider.characters.length
+    assert_equal 3, @rider.characters.length
     assert_equal Character, @rider.characters.first.class
   end
 
   def test_it_has_newtowrk
     assert_equal "NBC", @rider.network
     refute_equal "ABC", @rider.network
+  end
+
+  def test_it_payrolls
+    assert_equal 1001000001.0, @rider.total_payroll
+    assert_equal Float, @rider.total_payroll.class
+    refute_equal 13, @rider.total_payroll
+  end
+
+  def test_it_finds_the_rich_guy
+    assert_equal @character_1, @rider.highest_grossing_actor
+    assert_instance_of Character, @rider.highest_grossing_actor
   end
 end
