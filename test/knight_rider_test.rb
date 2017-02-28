@@ -41,5 +41,9 @@ class KnightRiderTest < Minitest::Spec
     it "should know its total payroll" do
       knight_rider.total_payroll.must_equal(1001000000)
     end
+
+    it "should know its best paid actor" do
+      knight_rider.highest_grossing_actor.actor.must_equal('David Hasselhoff')
+    end
   end
 end

@@ -10,7 +10,6 @@ class KnightRider
 
   def total_payroll
     characters.reduce(0) do |payroll, character|
-      p character.salary
       payroll += character.salary
     end
   end
