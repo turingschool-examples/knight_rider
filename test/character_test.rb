@@ -35,8 +35,7 @@ class CharacterTest < Minitest::Test
 
   def test_it_gets_salary
     assert_equal 0, @kitt.salary.to_i
-    assert_equal "1,000,000,000.00", @mk.salary.to_i
-
+    assert_equal 1000000000, @mk.salary.gsub!(/([,.])/, '')[0..6].to_i
   end
 
   def test_it_gets_headshot_url
