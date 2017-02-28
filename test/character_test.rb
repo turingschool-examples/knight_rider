@@ -14,6 +14,15 @@ class CharacterTest < Minitest::Spec
     it "should be a character" do
       kitt.must_be_instance_of(Character)
     end
+
+    it "should know its own information" do
+      kitt.name.must_equal('KITT')
+      kitt.actor.must_equal('William Daniels')
+      kitt.description.must_equal('Pontiac Trans-Am')
+      kitt.birth_year.must_equal(1982)
+      kitt.salary.must_equal(0)
+      kitt.headshot_url.must_equal("https://goo.gl/lSFYQo")
+    end
   end
 end
 
