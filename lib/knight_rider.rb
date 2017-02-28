@@ -1,4 +1,3 @@
-
 class KnightRider
 
   attr_reader :characters,
@@ -12,10 +11,10 @@ class KnightRider
   end
 
   def total_payroll
-    characters.map {|char| char.salary}.reduce(:+)
+    characters.map {|character| character.salary}.reduce(:+)
   end
 
   def highest_grossing_actor
-    characters.max_by {|char| char.salary}
+    characters.max_by {|character| character.salary}
   end
 end
