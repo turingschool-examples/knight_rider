@@ -21,6 +21,8 @@ class KnightRider
     characters.max_by do |character|
       character.salary
     end
+    binding.pry
+    ''
   end
 
 end
