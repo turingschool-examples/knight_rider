@@ -5,14 +5,14 @@ require './lib/knight_rider'
 require './lib/character'
 
 class KnightRiderTest < Minitest::Test
-attr_reader :kitt, :michael_knight, :devon_miles, :knight_rider, :knight_rider_it_2
+attr_reader :kitt, :michael_knight, :devon_miles, :knight_rider, :knight_rider_2
 
   def setup
     @kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
     @michael_knight = Character.new("Michael Knight", "David Hasselhoff", "A special type of hero", 1952, "1,000,000,000.00", "https://goo.gl/Qk0pwL")
     @devon_miles = Character.new("Devon Miles", "Edward Mulhare", "FLAG spokesman and mission coordinator", 1923, "1,000,000", "https://goo.gl/JsvAuV")
     @knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
-    @knight_rider_it_2 = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
+    @knight_rider_2 = KnightRider.new([kitt, michael_knight, devon_miles], "Glen Larson", "NBC")
   end
 
   def test_it_exists
@@ -66,9 +66,12 @@ attr_reader :kitt, :michael_knight, :devon_miles, :knight_rider, :knight_rider_i
   end
 
   def test_it_calculates_total_payroll
-    assert_equal 1001000000, knight_rider_it_2.total_payroll
+    assert_equal 1001000000, knight_rider_2.total_payroll
   end
 
-  # knight_rider.highest_grossing_actor
-  #=> <Character:@name="Michael Knight"...>
+  def test_it_returns_highest_grossing_actor
+    assert knight_rider_2.highest_grossing_actor
+    assert_equal "David Hasselhoff", knight_rider_2.highest_grossing_actor.actor
+    assert_equal 1000000000, knight_rider_2.highest_grossing_actor.salary
+  end
 end
