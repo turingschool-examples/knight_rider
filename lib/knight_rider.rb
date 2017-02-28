@@ -1,14 +1,18 @@
-kitt = Character.new("KITT", "William Daniels", "Pontiac Trans-Am", 1982, "0.00", "https://goo.gl/lSFYQo")
-#=> <Character:...>
-kitt.name
-#=> "KITT"
-kitt.actor
-#=> "William Daniels"
-kitt.description
-#=> "Pontiac Trans-Am"
-kitt.birth_year
-#=> 1982
-kitt.salary
-#=> 0
-kitt.headshot_url
-#=> "https://goo.gl/lSFYQo"
+require "./lib/character"
+class KnightRider
+  attr_reader :characters, :creator, :network
+  
+  def initialize(characters, creator, network)
+    @characters = characters
+    @creator = creator
+    @network = network    
+  end
+end
+
+# knight_rider = KnightRider.new([kitt, michael_knight], "Glen Larson", "NBC")
+# knight_rider.characters
+# #=> [<Character:...>, <Character:...>]
+# knight_rider.creator
+# #=> "Glen Larson"
+# knight_rider.network
+# #=> "NBC"

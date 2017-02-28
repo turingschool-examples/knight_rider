@@ -35,7 +35,7 @@ class CharacterTest < Minitest::Test
   end
 
   def test_salary_can_take_string_with_commas
-    beth = Character.new("BETH", "herself", "Pontiac Trans-Am", 1982, "1,000,000,000.00", "https://goo.gl/lSFY32")
+    beth = Character.new("BETH", "herself", "Pontiac Trans-Am", 1988, "1,000,000,000.00", "https://goo.gl/lSFY32")
     assert_equal 1000000000.00, beth.salary
   end
 
