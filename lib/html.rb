@@ -10,7 +10,6 @@ class HTML
   def build_html
     template = File.read('./data/template.html')
     erb_template = ERB.new(template)
-    show = @show
     erb_template.result(binding)
   end
 
