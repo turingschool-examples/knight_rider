@@ -1,0 +1,18 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Knight Rider Cast</title>
+</head>
+<body>
+  <h1>Knight Rider Cast</h1>
+  <% characters.each do |character| %>
+    <h3 style="color:#cb4335;">Character: <%= character.name %></h3>
+    <p>Actor: <%= character.actor %></p>
+    <p>Description: <%= character.description %></p>
+    <p>Age: <%= Time.now.year - character.birth_year %></p>
+    <% headshot_link = character.headshot_url %>
+    <img src=<%="#{headshot_link}"%> alt=<%="#{character.name} Headshot"%> style="height:290px;">
+    
+  <% end %>
+</body>
+</html>
