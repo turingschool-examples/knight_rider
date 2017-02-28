@@ -1,6 +1,6 @@
 class KnightRider
 
-  def initialize
+  def initialize(data)
 
   end
 
